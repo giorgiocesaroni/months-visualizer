@@ -54,7 +54,7 @@ function AgeVisualizer({ dateOfBirth }) {
 
    return (
       <div className="grid gap-4">
-         {Array(9)
+         {Array(10)
             .fill(0)
             .map((_, ageGroupIndex) => {
                return (
@@ -64,7 +64,7 @@ function AgeVisualizer({ dateOfBirth }) {
                            .fill(0)
                            .map((_, monthIndex) => {
                               const _elaspedMonths =
-                                 monthIndex + 1 + (ageGroupIndex + 1) * 120;
+                                 monthIndex + 1 + ageGroupIndex * 120;
                               console.log({ _elaspedMonths, ageInMonths });
 
                               const isFilled = _elaspedMonths <= ageInMonths;
@@ -85,7 +85,7 @@ function AgeVisualizer({ dateOfBirth }) {
                            })}
                      </div>
                      <p className="text-gray-500 text-xs">{`${
-                        (ageGroupIndex + 1) * 10
+                        ageGroupIndex * 10
                      }'s`}</p>
                   </div>
                );
